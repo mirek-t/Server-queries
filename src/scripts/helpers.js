@@ -1,4 +1,10 @@
-import { getData, sendData } from "./methods.js";
+import {
+  getData,
+  sendData,
+  putData,
+  patchData,
+  deleteData,
+} from "./methods.js";
 
 const createHtmlTag = ({
   tagName,
@@ -57,6 +63,23 @@ const sendRequest = (url, method, body, resultTag) => {
         (r) => (resultTag.innerText = JSON.stringify(r, null, 2))
       );
       break;
+    case "PUT":
+      putData(url, body.value).then(
+        (r) => (resultTag.innerText = JSON.stringify(r, null, 2))
+      );
+      break;
+    case "PATCH":
+      patchData(url, body.value).then(
+        (r) => (resultTag.innerText = JSON.stringify(r, null, 2))
+      );
+      break;
+    case "DELETE":
+      deleteData(url, body.value).then(
+        (r) => (resultTag.innerText = JSON.stringify(r, null, 2))
+      );
+      break;
+    default:
+      resultTag.innerText = "Choose method.";
   }
 };
 
