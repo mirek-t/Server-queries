@@ -4,7 +4,6 @@ export const getData = async (url) => {
 };
 
 export const sendData = async (url, body) => {
-  console.log(body);
   const data = await fetch(url, {
     method: "POST",
     headers: {

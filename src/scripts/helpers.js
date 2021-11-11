@@ -63,31 +63,6 @@ const sendRequest = (url, method, body, resultTag) => {
 export const createGUI = (supportedMethods) => {
   const wrapper = document.createElement("div");
 
-  const input = createHtmlTag({
-    tagName: "input",
-    tagId: "endpoint",
-    tagAttr: [
-      { key: "type", value: "text" },
-      { key: "value", value: "http://localhost:3000/posts" },
-    ],
-  });
-
-  const result = createHtmlTag({ tagName: "pre" });
-
-  const textArea = createHtmlTag({ tagName: "textarea", tagClass: "data" });
-
-  const button = createHtmlTag({
-    tagName: "button",
-    tagId: "send",
-    tagText: "send",
-    tagEvent: {
-      type: "click",
-      cb: () => {
-        sendRequest(input.value, select.value, textArea, result);
-      },
-    },
-  });
-
   const select = createHtmlTag({
     tagName: "select",
     tagId: "method",
@@ -103,6 +78,31 @@ export const createGUI = (supportedMethods) => {
 
     select.appendChild(option);
   });
+
+  const input = createHtmlTag({
+    tagName: "input",
+    tagId: "endpoint",
+    tagAttr: [
+      { key: "type", value: "text" },
+      { key: "value", value: "http://localhost:3000/posts" },
+    ],
+  });
+
+  const button = createHtmlTag({
+    tagName: "button",
+    tagId: "send",
+    tagText: "send",
+    tagEvent: {
+      type: "click",
+      cb: () => {
+        sendRequest(input.value, select.value, textArea, result);
+      },
+    },
+  });
+
+  const textArea = createHtmlTag({ tagName: "textarea", tagClass: "data" });
+
+  const result = createHtmlTag({ tagName: "pre" });
 
   wrapper.appendChild(select);
   wrapper.appendChild(input);
