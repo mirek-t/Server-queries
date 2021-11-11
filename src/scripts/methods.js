@@ -6,7 +6,6 @@ export const getData = async (url) => {
 export const sendData = async (url, body) => {
   const data = await fetch(url, {
     method: "POST",
-    mode: "no-cors",
     headers: {
       "Content-Type": "application/json",
       "Access-Control-Allow-Origin": "*",
