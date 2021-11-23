@@ -1,4 +1,4 @@
-# Server-req
+# Server-queries
 
 ## CRUD - create, read, update, delete
 
