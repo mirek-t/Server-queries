@@ -1,4 +1,4 @@
-# Postman Web
+# Server-queries
 
 ## CRUD - create, read, update, delete
 
