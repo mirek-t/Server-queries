@@ -80,7 +80,7 @@ const sendRequest = (url, method, body, resultTag) => {
       deleteData(url, body).then((r) => showResults(r, resultTag));
       break;
     default:
-      resultTag.innerText = "Choose method.";
+      resultTag.innerText = "Choose correct method.";
   }
 };
 
@@ -157,7 +157,7 @@ export const createGUI = (supportedMethods) => {
   const button = createHtmlTag({
     tagName: "button",
     tagId: "send",
-    tagText: "send",
+    tagText: "Send",
     tagEvent: {
       type: "click",
       cb: () => {

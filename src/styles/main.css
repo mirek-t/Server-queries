@@ -1,4 +1,36 @@
+body {
+  max-width: 1200px;
+  width: auto;
+  margin: auto;
+  padding: 10px;
+  background-color: #22272e;
+  color: rgb(173, 186, 199);
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
 .data {
   display: block;
   margin: 10px 0;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+#method {
+  margin-right: 10px;
+}
+
+input {
+  margin-right: 10px;
+}
+
+pre {
+  margin-bottom: 30px;
+}
+
+.requestBody {
+  margin-bottom: 10px;
 }
